@@ -4,19 +4,26 @@ const { render, Box, Text, useStdout, useInput } = require('ink');
 const Spinner = require('ink-spinner').default;
 
 const asciiArt = [
-  '::::::::::::::::::::::::',
-  '::::::::::::::::::::::::',
-  '::::::.        .::::::::',
-  ':::::.          ::::::::',
-  ':::::.    ..    ::::::::',
-  ':::::.   ....   ::::::::',
-  '::::::.        .::::::::',
-  '::::::::::::::::::::::::',
+':.............................',
+'::............................',
+':::...........................',
+':::::......*%%%%%#-...........',
+':::::....-%%*++=+#%%-.........',
+'::::::..+%%++===-==%%:...:::::',
+'::::::..%@**#*+=***+@#:..:::::',
+':::::::%@%+===+==-==#@=:::::::',
+'::::::*@@%++++***+++%@=:::::::',
+':::-+*%%@@%++*+=++++@@%-::::::',
+':-===%@@@@@#+++==+*@@@@%=:::::',
+'===+%@@@@%@%*****++%%%%%%%:::',
+'=+***###%%*****++==-..:::..:::',
+'=.::..:+==++=::::.:::::::...:.',
+'-....:::-.-:::::.-:::::::.::.:',
 ];
 
 const bioLines = [
-  { text: 'Shirel Marino ', color: 'cyan' },
-  { text: 'building cool products.', color: 'cyan' },
+  { text: 'Shirel Marino ', color: 'magenta' },
+  { text: 'building cool products.', color: 'magenta' },
   { text: '', color: 'white' },
   { text: "CS @ ITESM'27", dim: true },
   { text: 'SWE @ Microsoft', dim: true },
@@ -89,8 +96,6 @@ const Footer = () => (
     <Box>
       <Text dimColor><Text color="red">←→</Text> navigate</Text>
       <Text>{'  '}</Text>
-      <Text dimColor><Text color="red">←</Text> back</Text>
-      <Text>{'  '}</Text>
       <Text dimColor><Text color="red">q</Text> quit</Text>
     </Box>
   </Box>
@@ -103,13 +108,16 @@ const AboutView = () => (
         <Text key={i} dimColor>{row}</Text>
       ))}
     </Box>
+    <Box flexDirection="column" marginX={2}>
+      <Text dimColor>   </Text>
+    </Box>
     <StaggeredBio lines={bioLines} />
   </Box>
 );
 
 const LinksView = () => (
   <Box justifyContent="center" alignItems="center">
-    <Text color="cyan">shirelmr</Text>
+    <Text color="cyan">GitHub: shirelmr</Text>
   </Box>
 );
 
